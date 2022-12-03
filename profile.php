@@ -25,6 +25,7 @@
      <a href="logout.php">Logout</a>&nbsp;
   </nav>
 </main>
+</html>
 
 <?php
 //footer code
