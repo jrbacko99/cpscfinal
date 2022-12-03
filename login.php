@@ -7,7 +7,7 @@
   <h2>Login</h2>
   <p>Please enter your Username and Password.</p>
   <div class="createuser-form-form">
-    <form action="Included/login.included.php" method="post">
+    <form action="included/login.included.php" method="post">
 
       <input type="text" name="eusername" placeholder="Username..."
       required>
