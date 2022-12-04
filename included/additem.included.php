@@ -2,6 +2,10 @@
 
 if (isset($_POST["submit"])) {
 
+  $itemid = $_POST["itemid"];
+  $itemn = $_POST["itemn"];
+  $itemq = $_POST["itemq"];
+
   $servername = "172.16.99.2";
   $username = "jbacko";
   $password = "student";
@@ -13,9 +17,6 @@ if (isset($_POST["submit"])) {
   if($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
-  $itemid = $_POST["itemid"];
-  $itemn = $_POST["itemn"];
-  $itemq = $_POST["itemq"];
 
   // inserts data into inventory table
   $sql = ("INSERT INTO inventory (itemid, itemn, itemq) VALUES ('$itemid', '$itemn', '$itemq')");
@@ -27,7 +28,7 @@ if (isset($_POST["submit"])) {
   else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
-  $conn->close();
 }
+$conn->close();
 
 ?>
