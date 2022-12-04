@@ -5,19 +5,36 @@
 <!-- Login form for our webpage.-->
 <section class="additem-form">
   <h2>List Products</h2>
-  <div class="additem-form-form">
-    <form action="included/listitems.included.php" method="post">
-      <button type="submit" value="Submit">List Items</button>&nbsp; &nbsp;
-    </form>
-  </div>
-  <?php
+<?php
+  $servername = "172.16.99.2";
+  $username = "jbacko";
+  $password = "student";
+  $dbname = "warehouse";
 
-  if (isset($_GET["error"])) {
-    else if ($_GET["error"] == "stmtfailed") {
-      echo "<p>Error. Something went wrong! Please try again.</p>";
-    }
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  // Check connection
+
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
   }
-  ?>
+  
+  $sql = ("SELECT * FROM inventory");
+  //insert to php database
+
+  echo "<table boreder='1'";
+  while($conn->query($sql) === TRUE){
+      echo "<tr>";
+      foreach ($row as $field => $value){
+        echo "<td>" . $value . "</td>";
+      }
+      echo "</tr>";
+  }
+  echo "</table>";
+
+  $conn->close();
+
+
+?>
 </section>
 
 <?php
