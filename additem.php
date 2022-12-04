@@ -23,6 +23,8 @@
       required>
       <br><br>
 
+      <button type="submit" value="Submit">Add Item</button>&nbsp; &nbsp;
+
     </form>
   </div>
   <?php
