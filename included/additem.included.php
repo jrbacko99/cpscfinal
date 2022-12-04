@@ -27,4 +27,9 @@ if (isset($_POST["submit"])) {
   }
 }
 $conn->close();
+
+else {
+  header("location: ../createaccount.php");
+  exit();
+}
 ?>
