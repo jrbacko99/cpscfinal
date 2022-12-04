@@ -25,11 +25,7 @@ if (isset($_POST["submit"])) {
   else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
-}
-$conn->close();
-
-else {
-  header("location: ../createaccount.php");
-  exit();
+  $conn->close();
+  header("location: ../additem.php");
 }
 ?>
