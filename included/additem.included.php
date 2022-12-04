@@ -1,35 +1,39 @@
 <?php
+
+$servername = "172.16.99.2";
+$username = "jbacko";
+$password = "student";
+$dbname = "warehouse";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if(!$conn) {
+  die("Connection failed");
+}
+
 if (isset($_POST["submit"])) {
 
   $itemid = $_POST["itemid"];
   $itemn = $_POST["itemn"];
   $itemq = $_POST["itemq"];
 
-  $servername = "172.16.99.2";
-  $username = "jbacko";
-  $password = "student";
-  $dbname = "warehouse";
-
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  echo "submit button worked and connect created";
-  // Check connection
-  if($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-    echo "connection worked";
+  if (empty($itemid) || empty($itemn) || empty($itemq)) {
+    echo 'Please fill in all of the information';
   }
+  else{
+    // inserts data into inventory table
+    $query = ("INSERT INTO inventory (itemid, itemn, itemq) VALUES ('$itemid', '$itemn', '$itemq')");
+    $result = mysqli_query($conn,$query);
 
-      // inserts data into inventory table
-    $sql = ("INSERT INTO inventory (itemid, itemn, itemq) VALUES ('$itemid', '$itemn', '$itemq')");
-      echo "sql statement worked";
-    if ($conn->query($sql) === TRUE) {
-      echo "You have successfully added your item";
+    if ($result) {
       header("location: ../additem.php");
+      echo "You have successfully added your item";
     }
     else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
-      echo "Your record has NOT been added";
+      echo "Your record has NOT been added. Please check your input.";
     }
-    $conn->close();
+  }
 }
 ?>
