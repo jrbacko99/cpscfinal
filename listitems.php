@@ -23,11 +23,8 @@
 
   $result = $conn->query($sql);
   if($result->num_rows > 0){
-    echo "Item ID";
   	while($row=$result->fetch_assoc()){
-  		echo $row["itemid"];
-      echo $row["itemn"];
-      echo $row["itemq"];
+  		echo $row["itemid"]."<&nbsp>".$row["itemn"]."<&nbsp>".$row["itemq"]."<br>";
   	}
   }
 
