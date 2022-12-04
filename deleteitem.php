@@ -4,16 +4,16 @@
 
 <!-- Login form for our webpage.-->
 <section class="additem-form">
-  <h2>Remove Item</h2>
+  <h2>Remove Product</h2>
   <div class="additem-form-form">
     <form action="included/deleteitem.included.php" method="post">
 
-      <label for="itemid">Item ID</label<br><br>
+      <label for="itemid">Product ID</label<br><br>
       <input type="text" name="itemid" placeholder="Item ID..."
       required>
       <br><br>
 
-      <button type="submit" value="Submit">Remove Item</button>&nbsp; &nbsp;
+      <button type="submit" value="Submit">Remove Product</button>&nbsp; &nbsp;
       <button type="reset" name="reset">Reset Form</button>
 
     </form>

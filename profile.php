@@ -21,8 +21,8 @@
   <p>Please select one of the following options below.</p>
   <nav>
      <a href="profile.php">Home Profile</a> &nbsp;
-     <a href="additem.php">Add Item</a> &nbsp;
-     <a href="deleteitem.php">Remove Item</a> &nbsp;
+     <a href="additem.php">Add Product</a> &nbsp;
+     <a href="deleteitem.php">Remove Product</a> &nbsp;
      <a href="inventory.php">Inventory</a> &nbsp;
      <a href="logout.php">Logout</a>&nbsp;
   </nav>
