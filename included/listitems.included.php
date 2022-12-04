@@ -11,10 +11,13 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
+if(isset($_POST['submit'])){
+    header('Location: ../listitems.php');
+}
 
 $sql = ("SELECT * FROM inventory");
 //insert to php database
-header("location: ../listitems.php");
+
 echo "<table boreder='1'";
 while($conn->query($sql) === TRUE){
     echo "<tr>";

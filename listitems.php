@@ -7,7 +7,7 @@
   <h2>List Products</h2>
   <div class="additem-form-form">
     <form action="included/listitems.included.php" method="post">
-      <button type="submit" value="Submit">Add Product</button>&nbsp; &nbsp;
+      <button type="submit" value="Submit">List Items</button>&nbsp; &nbsp;
     </form>
   </div>
   <?php
