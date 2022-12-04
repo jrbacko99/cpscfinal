@@ -23,7 +23,7 @@
      <a href="profile.php">Home Profile</a> &nbsp;
      <a href="additem.php">Add Product</a> &nbsp;
      <a href="deleteitem.php">Remove Product</a> &nbsp;
-     <a href="inventory.php">Inventory</a> &nbsp;
+     <a href="listitems.php">List Products</a> &nbsp;
      <a href="logout.php">Logout</a>&nbsp;
   </nav>
 </main>
