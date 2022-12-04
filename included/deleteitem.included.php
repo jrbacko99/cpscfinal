@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 
 $itemid = $_POST["itemid"];
 
-$sql = ("DELETE FROM inventory WHERE itemid= VALUES ('$itemid')");
+$sql = ("DELETE FROM inventory WHERE itemid = ('$itemid')");
 //Removes item from database
 if ($conn->query($sql) === TRUE)
     {

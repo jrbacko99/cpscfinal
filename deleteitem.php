@@ -13,7 +13,7 @@
       required>
       <br><br>
 
-      <button type="submit" value="Submit">Add Item</button>&nbsp; &nbsp;
+      <button type="submit" value="Submit">Remove Item</button>&nbsp; &nbsp;
       <button type="reset" name="reset">Reset Form</button>
 
     </form>
