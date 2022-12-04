@@ -14,7 +14,7 @@
       <br><br>
 
       <label for="itemn">Item Name</label<br><br>
-      <input type="text" name="itemin" placeholder="Item Name..."
+      <input type="text" name="itemn" placeholder="Item Name..."
       required>
       <br><br>
 
@@ -37,7 +37,7 @@
     else if ($_GET["error"] == "itemid") {
       echo "<p>Please enter an Item ID number.</p>";
     }
-    else if ($_GET["error"] == "itemin") {
+    else if ($_GET["error"] == "itemn") {
       echo "<p>Please enter an Item Name.</p>";
     }
     else if ($_GET["error"] == "itemq") {
