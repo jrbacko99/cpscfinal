@@ -1,28 +1,52 @@
 <?php
-$itemid = $_POST["itemid"];
-$itemn = $_POST["itemn"];
-$itemq = $_POST["itemq"];
+  include_once 'header.php';
+?>
 
-$servername = "172.16.99.2";
-$username = "student";
-$password = "password";
-$dbname = "warehouse";
+<!-- Login form for our webpage.-->
+<section class="additem-form">
+  <h2>Add Item</h2>
+  <div class="additem-form-form">
+    <form action="included/additem.included.php" method="post">
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+      <label for="itemid">Item ID</label<br><br>
+      <input type="text" name="itemid" placeholder="Item ID..."
+      required>
+      <br><br>
 
-// inserts data into warehouse table
-$sql = ("INSERT INTO warehouse (itemid, itemn, itemq) VALUES ('$itemid', '$itemn', '$itemq')");
+      <label for="itemn">Item Name</label<br><br>
+      <input type="text" name="itemin" placeholder="Item Name..."
+      required>
+      <br><br>
 
-if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
-}
-else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-}
+      <label for="itemq">Item Quantity</label<br><br>
+      <input type="text" name="itemq" placeholder="Item Quantity..."
+      required>
+      <br><br>
 
-$conn->close();
+    </form>
+  </div>
+  <?php
+
+  if (isset($_GET["error"])) {
+    if ($_GET["error"] == "emptyinput") {
+      echo "<p>Please fill in all fields.</p>";
+    }
+    else if ($_GET["error"] == "itemid") {
+      echo "<p>Please enter an Item ID number.</p>";
+    }
+    else if ($_GET["error"] == "itemin") {
+      echo "<p>Please enter an Item Name.</p>";
+    }
+    else if ($_GET["error"] == "itemq") {
+      echo "<p>Please enter an Item Quantity.</p>";
+    }
+    else if ($_GET["error"] == "stmtfailed") {
+      echo "<p>Error. Something went wrong! Please try again.</p>";
+    }
+  }
+  ?>
+</section>
+
+<?php
+  include_once 'footer.php';
 ?>
