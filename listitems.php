@@ -17,24 +17,23 @@
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
-  
-  $sql = ("SELECT * FROM inventory");
-  //insert to php database
 
-  echo "<table boreder='1'";
-  while($conn->query($sql) === TRUE){
-      echo "<tr>";
-      foreach ($row as $field => $value){
-        echo "<td>" . $value . "</td>";
-      }
-      echo "</tr>";
+  echo "connected successfully <br>";
+  $sql = "SELECT itemid, itemn, itemq FROM inventory";
+
+  $result = $conn->query($sql);
+  if($result->num_rows > 0){
+    echo "Item ID";
+  	while($row=$result->fetch_assoc()){
+  		echo $row["itemid"];
+      echo $row["itemn"];
+      echo $row["itemq"];
+  	}
   }
-  echo "</table>";
 
   $conn->close();
-
-
 ?>
+
 </section>
 
 <?php
