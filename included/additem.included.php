@@ -20,7 +20,7 @@ if (isset($_POST["submit"])) {
 
     // inserts data into inventory table
   $sql = ("INSERT INTO inventory (itemid, itemn, itemq) VALUES ('$itemid', '$itemn', '$itemq')");
-    echo "sql statement worked"
+    echo "sql statement worked";
   if ($conn->query($sql) === TRUE) {
     echo "You have successfully added your item";
     header("location: ../additem.php");
@@ -30,9 +30,9 @@ if (isset($_POST["submit"])) {
     echo "Your record has NOT been added";
   }
   $conn->close();
+}
 else {
   header("location: ../profile.php");
   exit();
-}
 }
 ?>
