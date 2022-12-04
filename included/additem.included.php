@@ -30,10 +30,6 @@ if (isset($_POST["submit"])) {
       echo "Error: " . $sql . "<br>" . $conn->error;
       echo "Your record has NOT been added";
     }
-}
-else{
-  $conn->close();
-  header("location: ../profile.php");
-  exit();
+    $conn->close();
 }
 ?>
