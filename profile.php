@@ -22,6 +22,7 @@
   <nav>
      <a href="profile.php">Home Profile</a> &nbsp;
      <a href="additem.php">Add Item</a> &nbsp;
+     <a href="deleteitem.php">Remove Item</a> &nbsp;
      <a href="inventory.php">Inventory</a> &nbsp;
      <a href="logout.php">Logout</a>&nbsp;
   </nav>
