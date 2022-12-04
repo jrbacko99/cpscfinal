@@ -24,6 +24,7 @@
       <br><br>
 
       <button type="submit" value="Submit">Add Item</button>&nbsp; &nbsp;
+      <button type="reset" name="reset">Reset Form</button>
 
     </form>
   </div>
