@@ -18,13 +18,12 @@
     die("Connection failed: " . $conn->connect_error);
   }
 
-  echo "connected successfully <br>";
   $sql = "SELECT itemid, itemn, itemq FROM inventory";
 
   $result = $conn->query($sql);
   if($result->num_rows > 0){
   	while($row=$result->fetch_assoc()){
-  		echo $row["itemid"]."<&nbsp>".$row["itemn"]."<&nbsp>".$row["itemq"]."<br>";
+  		echo "<b>".$row["itemn"]."</b>"."<br>".$row["itemid"]."&nbsp"."&nbsp"."&nbsp"."&nbsp".$row["itemq"]."<br>";
   	}
   }
 
