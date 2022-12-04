@@ -19,8 +19,7 @@ $sql = ("INSERT INTO inventory (itemid, itemn, itemq) VALUES ('$itemid', '$itemn
 //insert to php database
 if ($conn->query($sql) === TRUE)
     {
-    header("location: ../additem.php");
-    echo "You have successfully added your item";
+    header("location: ../itemcreated.php");
     }
 else
     {

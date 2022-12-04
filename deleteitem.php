@@ -1,26 +1,39 @@
 <?php
-$itemid = $_POST["itemid"];
+  include_once 'header.php';
+?>
 
-$servername = "172.16.99.2";
-$username = "student";
-$password = "password";
-$dbname = "warehouse";
+<!-- Login form for our webpage.-->
+<section class="additem-form">
+  <h2>Remove Item</h2>
+  <div class="additem-form-form">
+    <form action="included/deleteitem.included.php" method="post">
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+      <label for="itemid">Item ID</label<br><br>
+      <input type="text" name="itemid" placeholder="Item ID..."
+      required>
+      <br><br>
 
-// inserts data into warehouse table
-$sql = ("DELETE FROM warehouse WHERE itemid= VALUES ('$itemid')");
+      <button type="submit" value="Submit">Add Item</button>&nbsp; &nbsp;
+      <button type="reset" name="reset">Reset Form</button>
 
-if ($conn->query($sql) === TRUE) {
-  echo "Record successfully Deleted";
-}
-else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-}
+    </form>
+  </div>
+  <?php
 
-$conn->close();
+  if (isset($_GET["error"])) {
+    if ($_GET["error"] == "emptyinput") {
+      echo "<p>Please fill in all fields.</p>";
+    }
+    else if ($_GET["error"] == "itemid") {
+      echo "<p>Please enter an Item ID number.</p>";
+    }
+    else if ($_GET["error"] == "stmtfailed") {
+      echo "<p>Error. Something went wrong! Please try again.</p>";
+    }
+  }
+  ?>
+</section>
+
+<?php
+  include_once 'footer.php';
 ?>
