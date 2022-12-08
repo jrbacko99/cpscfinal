@@ -12,7 +12,7 @@ require_once '../connect.php';
 
   $result = $conn->query($sql);
   if($result->num_rows > 0){
-    echo "<div style='text-align:left'>";
+    echo "<div style='text-align:center'>";
     echo "Item Name <br> <br> Item ID &nbsp &nbsp &nbsp &nbsp";
   	while($row=$result->fetch_assoc()){
   		echo "<b>".$row["itemn"]."</b>"."<br>"."<br>".$row["itemid"]."&nbsp"."&nbsp"."&nbsp"."&nbsp".$row["itemq"]."<br>";
