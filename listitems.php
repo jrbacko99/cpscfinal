@@ -6,17 +6,7 @@
 <section class="additem-form">
   <h2>List Products</h2>
 <?php
-  $servername = "172.16.99.2";
-  $username = "jbacko";
-  $password = "student";
-  $dbname = "warehouse";
-
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  // Check connection
-
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+require_once '../connect.php';
 
   $sql = "SELECT itemid, itemn, itemq FROM inventory";
 
