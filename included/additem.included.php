@@ -26,9 +26,7 @@ if (strlen((string)$itemid) === 12){
       echo "Error: " . $sql . "<br>" . $conn->error;
       }
 }
-  $conn->close();
-else {
-  echo "ERROR! Please enter a unique 12 digit barcode";
-}
+$conn->close();
+echo "ERROR! Please enter a unique 12 digit barcode";
 
 ?>
