@@ -20,15 +20,15 @@ if (strlen((string)$itemid) === 12){
   if ($conn->query($sql) === TRUE)
       {
       header("location: ../itemcreated.php");
-      $conn->close();
-      exit()
       }
   else
       {
       echo "Error: " . $sql . "<br>" . $conn->error;
       }
 }
+else{
+  header("location: ../invaliditemid.php");
+}
 $conn->close();
-header("location: ../invaliditemid.php");
 
 ?>
