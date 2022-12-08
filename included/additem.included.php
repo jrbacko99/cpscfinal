@@ -27,6 +27,7 @@ if (strlen((string)$itemid) === 12){
       }
 }
 $conn->close();
+header("location: ../additem.php");
 echo "ERROR! Please enter a unique 12 digit barcode";
 
 ?>
