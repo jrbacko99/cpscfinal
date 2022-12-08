@@ -14,17 +14,21 @@ if ($conn->connect_error) {
 $itemid = $_POST["itemid"];
 $itemn = $_POST["itemn"];
 $itemq = $_POST["itemq"];
-
-$sql = ("INSERT INTO inventory (itemid, itemn, itemq) VALUES ('$itemid', '$itemn', '$itemq')");
+if (strlen((string)$itemid) === 12){
+  $sql = ("INSERT INTO inventory (itemid, itemn, itemq) VALUES ('$itemid', '$itemn', '$itemq')");
 //insert to php database
-if ($conn->query($sql) === TRUE)
-    {
-    header("location: ../itemcreated.php");
-    }
-else
-    {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-$conn->close();
+  if ($conn->query($sql) === TRUE)
+      {
+      header("location: ../itemcreated.php");
+      }
+  else
+      {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+      }
+}
+  $conn->close();
+else {
+  echo "ERROR! Please enter a unique 12 digit barcode";
+}
 
 ?>
